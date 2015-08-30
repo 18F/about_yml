@@ -1,0 +1,23 @@
+---
+name: about_yml
+full_name: .about.yml gem
+type: app
+owner_type: project
+status: active
+stage: discovery
+testable: true
+description: >
+  A gem for the .about.yml project metadata schema and tools
+stack:
+- Ruby
+licenses:
+  .about.yml:
+    name: CC0
+    url: https://github.com/18F/about_yml/blob/master/LICENSE.md
+tasks: https://github.com/18F/about_yml/issues
+contact:
+- mailto:michael.bland@gsa.gov
+team:
+- github: mbland
+  role: lead
+- github: arowla

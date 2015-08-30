@@ -1,0 +1,33 @@
+#! /usr/bin/env ruby
+
+require 'English'
+require 'octokit'
+require 'yaml'
+
+USAGE = <<END_USAGE
+Usage: #{$PROGRAM_NAME} github_org [github_token]
+
+Prints a list of an organization's GitHub repositories and their descriptions
+to standard output as YAML.
+
+where:
+  github_org    name of the GitHub organization to scan
+  github_token  path to a file containing a valid GitHub API token
+                  defaults to $HOME/.github_token
+END_USAGE
+
+def usage(exitstatus = 0)
+  (exitstatus == 0 ? $stdout : $stderr).puts USAGE
+  exit exitstatus
+end
+
+github_org, github_token = ARGV
+github_token ||= File.join(ENV['HOME'], '.github_token')
+usage 1 unless github_org && File.exist?(github_token)
+
+Octokit.auto_paginate = true
+client = Octokit::Client.new access_token: File.read(github_token)
+
+puts(client.org_repos(github_org).each_with_object([]) do |repo, descriptions|
+  descriptions << { 'repo' => repo.name, 'description' => repo.description }
+end.to_yaml)

@@ -1,0 +1,58 @@
+#! /usr/bin/env ruby
+
+require_relative '../lib/about_yml/about'
+require 'English'
+require 'safe_yaml'
+
+USAGE = <<END_USAGE
+Usage: #{$PROGRAM_NAME} github_org [github_token] [missing_outfile] \
+[raw_abouts_file]
+
+Scrapes the .about.yml files from an organization's GitHub repositories and
+writes their contents to standard output as YAML, categorized by visibility
+and owner type.
+
+Also validates the .about.yml files and prints errors to standard error. The
+program WILL NOT exit with an error if any files fail validation.
+
+where:
+  github_org       name of the GitHub organization to scan
+  github_token     path to a file containing a valid GitHub API token
+                     defaults to $HOME/.github_token
+  missing_outfile  (optional) path to a file that will contain a list of repos
+                     that do not have .about.yml files
+  raw_abouts_file  (optional) if the file exists, the program will read
+                     .about.yml data from it rather than scraping GitHub;
+                     otherwise, the unprocessed .about.yml data scraped from
+                     GitHub will be written to it
+END_USAGE
+
+def usage(exitstatus = 0)
+  (exitstatus == 0 ? $stdout : $stderr).puts USAGE
+  exit exitstatus
+end
+
+github_org, github_token, missing_outfile, raw_abouts_file = ARGV
+github_token ||= File.join(ENV['HOME'], '.github_token')
+usage 1 unless github_org && File.exist?(github_token)
+
+if raw_abouts_file && File.exist?(raw_abouts_file)
+  fetch_results = SafeYAML.load_file raw_abouts_file, safe: true
+else
+  access_key = File.read github_token
+  fetch_results = ::AboutYml::AboutFile.fetch_from_github github_org, access_key
+  File.write raw_abouts_file, fetch_results.to_yaml if raw_abouts_file
+  if missing_outfile
+    File.write missing_outfile, fetch_results['missing'].to_yaml
+  end
+end
+
+puts(%w(public private).each_with_object({}) do |scope, full_yml|
+  repo_to_data = fetch_results[scope]
+  results = ::AboutYml::AboutFile.validate_about_files repo_to_data
+  results['invalid'].each do |repo, result|
+    $stderr.puts "#{repo}:\n  #{result[:errors].join "\n  "}"
+  end
+  full_yml[scope] = ::AboutYml::AboutFile.organize_by_owner_type_and_name(
+    repo_to_data)
+end.to_yaml)

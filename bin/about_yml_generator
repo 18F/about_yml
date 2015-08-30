@@ -1,0 +1,6 @@
+#! /usr/bin/env ruby
+# @author Mike Bland (michael.bland@gsa.gov)
+
+require_relative '../lib/about_yml'
+
+puts AboutYml::TemplateGenerator.new.generate

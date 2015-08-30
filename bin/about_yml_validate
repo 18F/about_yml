@@ -1,0 +1,28 @@
+#! /usr/bin/env ruby
+
+require_relative '../lib/about_yml'
+require 'English'
+require 'safe_yaml'
+
+def usage(exitstatus = 0)
+  (exitstatus == 0 ? $stdout : $stderr).puts <<END_USAGE
+#{$PROGRAM_NAME} path_to_about_file [...]
+
+Validates .about.yml file contents. Prints nothing on success; prints errors
+to standard error.
+END_USAGE
+  exit exitstatus
+end
+
+usage 1 if ARGV.empty?
+ARGV.each { |f| abort "#{f} does not exist" unless File.exist? f }
+
+exitstatus = 0
+ARGV.each do |about_file|
+  about_data = SafeYAML.load_file about_file, safe: true
+  errors = ::AboutYml::AboutFile.validate_single_file about_data
+  next if errors.empty?
+  exitstatus = 1
+  $stderr.puts "#{about_file}:\n  #{errors.join "\n  "}"
+end
+exit exitstatus

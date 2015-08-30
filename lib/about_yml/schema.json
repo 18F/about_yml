@@ -1,0 +1,200 @@
+{
+    "title": ".about.yml - .about.yml files",
+    "description": ".about.yml project metadata",
+    "$schema": "http://json-schema.org/draft-04/hyper-schema",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "Short name that acts as the project identifier"
+        },
+        "full_name": {
+            "type": "string",
+            "description": "Full proper name of the project"
+        },
+        "type": {
+            "type": "string",
+            "description": "The type of content in the repo",
+            "enum": ["app", "docs", "policy"]
+        },
+        "owner_type": {
+            "type": "string",
+            "description": "Describes whether a project team, working group/guild, etc. owns the repo",
+            "enum": ["guild", "working-group", "project"]
+        },
+        "parent": {
+            "type": "string",
+            "description": "Name of the main project repo if this is a sub-repo; name of the working group/guild repo if this is a working group/guild subproject"
+        },
+        "stage": {
+            "type": "string",
+            "enum": ["discovery", "alpha", "beta", "live"],
+            "description": "Maturity stage of the project"
+        },
+        "status": {
+            "type": "string",
+            "enum": ["active", "deprecated"],
+            "description": "Whether or not the project is actively maintained"
+        },
+        "description": {
+            "type": "string",
+            "description": "Description of the project"
+        },
+        "testable": {
+            "type": "boolean",
+            "default": false,
+            "description": "Should be 'true' if the project has a continuous build"
+        },
+        "team": {
+            "type": "array",
+            "description": "Team members contributing to the project",
+            "items": {
+                "$ref": "#/definitions/person"
+            },
+            "uniqueItems": true
+        },
+        "partners": {
+            "type": "array",
+            "description": "Partners for whom the project is developed",
+            "items": {"type": "string"},
+            "uniqueItems": true
+        },
+        "milestones": {
+            "type": "array",
+            "description": "Brief descriptions of significant project developments",
+            "items": {"type": "string"},
+            "uniqueItems": true
+        },
+        "stack": {
+            "type": "array",
+            "description": "Technologies used to build the project",
+            "items": {"type": "string"},
+            "uniqueItems": true
+        },
+        "impact": {
+            "type": "string",
+            "description": "Brief description of the project's outcomes"
+        },
+        "services": {
+            "type": "array",
+            "description": "Services used to supply project status information",
+            "items": {
+                "$ref": "#/definitions/service"
+            },
+            "uniqueItems": true
+        },
+        "licenses": {
+            "type": "object",
+            "description": "Licenses that apply to the project and/or its components",
+            "patternProperties": {
+                ".*": {"$ref": "#/definitions/license"}
+            }
+        },
+        "blog": {
+            "type": "array",
+            "description": "Blogs or websites associated with project development",
+            "items": {
+                "type": "string",
+                "format": "uri"
+            },
+            "format": "uri",
+            "uniqueItems": true
+        },
+        "links": {
+            "type": "array",
+            "description": "Links to project artifacts",
+            "items": {
+                "$ref": "#/definitions/link"
+            },
+            "format": "uri",
+            "uniqueItems": true
+        },
+        "contact": {
+            "type": "array",
+            "description": "Email addresses of points-of-contact",
+            "items": {
+              "type": "string",
+              "description": "Email address",
+              "format": "uri"
+            },
+            "uniqueItems": true
+        }
+    },
+    "required": [
+        "name", "full_name", "stage", "team", "licenses", "owner_type", "status", "testable"
+    ],
+    "definitions": {
+        "person": {
+            "type": "object",
+            "description": "Individual contributor to the project",
+            "properties": {
+                "github": {
+                    "type": "string",
+                    "description": "GitHub user name"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Internal team identifier/user name"
+                },
+                "role": {
+                    "type": "string",
+                    "description": "Team member's role; leads should be designated as 'lead'"
+                }
+            }
+        },
+        "service": {
+            "type": "object",
+            "description": "Service used to provide project status",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "Name of the service"
+                },
+                "category": {
+                    "type": "string",
+                    "description": "Type of the service"
+                },
+                "url": {
+                    "type": "string",
+                    "description": "URL for detailed information",
+                    "format": "uri"
+                },
+                "badge": {
+                    "type": "string",
+                    "description": "URL for the status badge",
+                    "format": "uri"
+                }
+            }
+        },
+        "license": {
+            "type": "object",
+            "description": "License under which the project (or a component of the project) is offered",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "Name of the license from the Software Package Data Exchange (SPDX): https://spdx.org/licenses/"
+                },
+                "url": {
+                    "type": "string",
+                    "description": "URL for the text of the license",
+                    "format": "uri"
+                }
+            }
+        },
+        "link": {
+            "type": "object",
+            "description": "Link to a project artifact",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "description": "URL for the link",
+                    "format": "uri"
+                },
+                "text": {
+                    "type": "string",
+                    "description": "Anchor text for the link"
+                }
+            }
+        }
+    }
+}
