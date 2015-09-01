@@ -31,8 +31,8 @@ module AboutYml
       result
     end
 
-    def self.fetch_file_contents(client, repo_full_name, ref: 'master')
-      about = client.contents repo_full_name, path: '.about.yml', ref: ref
+    def self.fetch_file_contents(client, repo_full_name)
+      about = client.contents repo_full_name, path: '.about.yml'
       SafeYAML.load Base64.decode64(about['content'])
     end
 
