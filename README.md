@@ -1,6 +1,6 @@
 # `.about.yml` schema and tools
 
-The `.about.yml` mechanism allows an project to publish and maintain metadata
+The `.about.yml` mechanism allows a project to publish and maintain metadata
 that can be easily maintained by project owners, that is visible and
 accessible to interested parties, and that can be harvested and processed by
 tools and automated systems. It is implemented using the
