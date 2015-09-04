@@ -34,7 +34,7 @@ program as a pre-commit check.
 Most users will interact with the gem through one of the following
 command-line programs.
 
-### `about_yml_generator`
+### `about_yml_generate`
 
 This program will generate an empty `.about.yml` template with descriptions of
 each field. To add a new `.about.yml` file to your project where `MY-PROJECT`
