@@ -40,6 +40,12 @@
             "type": "string",
             "description": "Description of the project"
         },
+        "tags": {
+            "type": "array",
+            "description": "Tags that describe the project or aspects of thr project",
+            "items": {"type": "string"},
+            "uniqueItems": true
+        },
         "testable": {
             "type": "boolean",
             "default": false,
