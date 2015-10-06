@@ -28,13 +28,8 @@
         },
         "stage": {
             "type": "string",
-            "enum": ["discovery", "alpha", "beta", "live"],
+            "enum": ["discovery", "alpha", "beta", "live", "sunset", "transfer", "end"],
             "description": "Maturity stage of the project"
-        },
-        "status": {
-            "type": "string",
-            "enum": ["active", "deprecated"],
-            "description": "Whether or not the project is actively maintained"
         },
         "description": {
             "type": "string",
