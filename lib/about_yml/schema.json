@@ -57,7 +57,7 @@
         },
         "tags": {
             "type": "array",
-            "description": "Tags that describe the project or aspects of thr project",
+            "description": "Tags that describe the project or aspects of the project",
             "items": {"type": "string"},
             "uniqueItems": true
         },
@@ -140,7 +140,7 @@
         }
     },
     "required": [
-        "name", "full_name", "stage", "team", "licenses", "owner_type", "testable"
+        "id", "name", "stage", "team", "licenses", "owner_type", "testable"
     ],
     "definitions": {
         "person": {
