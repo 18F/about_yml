@@ -6,7 +6,7 @@ require 'safe_yaml'
 
 USAGE = <<END_USAGE
 Usage: #{$PROGRAM_NAME} github_org [github_token] [missing_outfile] \
-[raw_abouts_file]
+[errors_outfile] [raw_abouts_file] 
 
 Scrapes the .about.yml files from an organization's GitHub repositories and
 writes their contents to standard output as YAML, categorized by visibility
@@ -21,6 +21,8 @@ where:
                      defaults to $HOME/.github_token
   missing_outfile  (optional) path to a file that will contain a list of repos
                      that do not have .about.yml files
+  errors_outfile   (optional) path to a file that will contain a list of repos
+                     with unparsable .about.yml files, and the offending lines
   raw_abouts_file  (optional) if the file exists, the program will read
                      .about.yml data from it rather than scraping GitHub;
                      otherwise, the unprocessed .about.yml data scraped from
@@ -32,7 +34,7 @@ def usage(exitstatus = 0)
   exit exitstatus
 end
 
-github_org, github_token, missing_outfile, raw_abouts_file = ARGV
+github_org, github_token, missing_outfile, errors_outfile, raw_abouts_file = ARGV
 github_token ||= File.join(ENV['HOME'], '.github_token')
 usage 1 unless github_org && File.exist?(github_token)
 
@@ -44,6 +46,9 @@ else
   File.write raw_abouts_file, fetch_results.to_yaml if raw_abouts_file
   if missing_outfile
     File.write missing_outfile, fetch_results['missing'].to_yaml
+  end
+  if errors_outfile
+    File.write errors_outfile, fetch_results['errors'].to_yaml
   end
 end
 
