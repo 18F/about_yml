@@ -45,7 +45,7 @@ module AboutYml
     rescue StandardError => err
       $stderr.puts('Error while parsing .about.yml for ' \
         "#{repo.full_name}:\n #{err}")
-      result['errors'] << repo.full_name
+      result['errors'] << {repo.full_name => err.message} 
     end
     private_class_method :collect_repository_data
 
