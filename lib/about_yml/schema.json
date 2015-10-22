@@ -111,11 +111,9 @@
         },
         "contact": {
             "type": "array",
-            "description": "Email addresses of points-of-contact",
+            "description": "URLs for points-of-contact",
             "items": {
-              "type": "string",
-              "description": "Email address",
-              "format": "uri"
+                "$ref": "#/definitions/contact"
             },
             "uniqueItems": true
         }
@@ -188,6 +186,21 @@
                 "url": {
                     "type": "string",
                     "description": "URL for the link",
+                    "format": "uri"
+                },
+                "text": {
+                    "type": "string",
+                    "description": "Anchor text for the link"
+                }
+            }
+        },
+        "contact": {
+            "type": "object",
+            "description": "Link to a project contact",
+            "properties": {
+                "url": {
+                    "type": "string",
+                    "description": "URL for the link to ",
                     "format": "uri"
                 },
                 "text": {
