@@ -111,7 +111,7 @@
         },
         "contact": {
             "type": "array",
-            "description": "URLs for points-of-contact",
+            "description": "URIs for points-of-contact",
             "items": {
                 "$ref": "#/definitions/contact"
             },
@@ -200,7 +200,7 @@
             "properties": {
                 "url": {
                     "type": "string",
-                    "description": "URL for the link to ",
+                    "description": "URI for the link to ",
                     "format": "uri"
                 },
                 "text": {
