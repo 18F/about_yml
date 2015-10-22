@@ -4,11 +4,11 @@
     "$schema": "http://json-schema.org/draft-04/hyper-schema",
     "type": "object",
     "properties": {
-        "name": {
+        "id": {
             "type": "string",
             "description": "Short name that acts as the project identifier"
         },
-        "full_name": {
+        "name": {
             "type": "string",
             "description": "Full proper name of the project"
         },
@@ -17,11 +17,31 @@
             "description": "The type of content in the repo",
             "enum": ["app", "docs", "policy"]
         },
-        "owner_type": {
-            "type": "string",
-            "description": "Describes whether a project team, working group/guild, etc. owns the repo",
-            "enum": ["guild", "working-group", "project"]
-        },
+        "owner": {
+          "organization": {
+              "type": "string",
+              "description": "Short name for the organization that owns the project"
+          },
+          "team": {
+            "type": {
+                "type": "string",
+                "description": "Describes whether a project team, working group/guild, etc. owns the repo",
+                "enum": ["guild", "working-group", "internal-project", "client-project"]
+            },
+            "id": {
+                "type": "string",
+                "description": "Short name that acts as the project identifier"
+            },
+            "leads": {
+              "type": "array",
+              "description": "People who are in charge of this project",
+              "items": {
+                  "$ref": "#/definitions/person"
+              },
+              "uniqueItems": true
+            }
+          },
+         },
         "parent": {
             "type": "string",
             "description": "Name of the main project repo if this is a sub-repo; name of the working group/guild repo if this is a working group/guild subproject"
