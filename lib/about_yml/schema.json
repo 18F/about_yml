@@ -59,6 +59,14 @@
             "items": {"type": "string"},
             "uniqueItems": true
         },
+        "users": {
+            "type": "array",
+            "description": "Organizations or individuals who have adopted the project for their own use",
+            "items": {
+                "$ref": "#/definitions/user"
+            },
+            "uniqueItems": true
+        },
         "milestones": {
             "type": "array",
             "description": "Brief descriptions of significant project developments",
@@ -139,6 +147,20 @@
                 "role": {
                     "type": "string",
                     "description": "Team member's role; leads should be designated as 'lead'"
+                }
+            }
+        },
+        "user": {
+            "type": "object",
+            "description": "Organizations or individuals who have adopted the project for their own use",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "The name of the organization or individual"
+                },
+                "url": {
+                    "type": "string",
+                    "description": "A URL to the user's version of the project"
                 }
             }
         },
