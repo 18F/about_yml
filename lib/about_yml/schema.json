@@ -44,7 +44,7 @@
         "testable": {
             "type": "boolean",
             "default": false,
-            "description": "Should be 'true' if the project has automated tests"
+            "description": "Should this repo have automated tests? If so, set to `true`."
         },
         "team": {
             "type": "array",
