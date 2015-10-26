@@ -6,15 +6,16 @@ require 'safe_yaml'
 
 def usage(exitstatus = 0)
   (exitstatus == 0 ? $stdout : $stderr).puts <<END_USAGE
-#{$PROGRAM_NAME} path_to_about_file [...]
+#{$PROGRAM_NAME} [path_to_about_file] [...]
 
-Validates .about.yml file contents. Prints nothing on success; prints errors
-to standard error.
+Validates .about.yml file contents. Assumes file in current directory
+unless path specified. Prints nothing on success; prints errors to
+standard error.
 END_USAGE
   exit exitstatus
 end
 
-usage 1 if ARGV.empty?
+ARGV << '.about.yml' if ARGV.empty?
 ARGV.each { |f| abort "#{f} does not exist" unless File.exist? f }
 
 exitstatus = 0
