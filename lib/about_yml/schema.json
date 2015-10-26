@@ -44,7 +44,7 @@
         "testable": {
             "type": "boolean",
             "default": false,
-            "description": "Should be 'true' if the project has a continuous build"
+            "description": "Should be 'true' if the project has automated tests"
         },
         "team": {
             "type": "array",
