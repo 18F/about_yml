@@ -4,6 +4,10 @@
     "$schema": "http://json-schema.org/draft-04/hyper-schema",
     "type": "object",
     "properties": {
+        "conformsTo": {
+            "type": "string",
+            "description": "URL to the schema that this description requres"
+        },
         "name": {
             "type": "string",
             "description": "Short name that acts as the project identifier"
