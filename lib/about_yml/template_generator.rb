@@ -18,6 +18,11 @@ module AboutYml
       "---\n# #{schema['description']}\n#\n#{props.join "\n\n"}"
     end
 
+    def get_ref(ref)
+      definition_properties ref
+    end
+
+
     private
 
     def generate_item(name, definition)
