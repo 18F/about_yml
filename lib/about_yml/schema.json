@@ -128,7 +128,7 @@
         }
     },
     "required": [
-        "name", "full_name", "stage", "team", "licenses", "owner_type", "status", "testable"
+        "name", "full_name", "stage", "team", "licenses", "owner_type", "testable"
     ],
     "definitions": {
         "person": {
