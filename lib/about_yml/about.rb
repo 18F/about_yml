@@ -36,16 +36,20 @@ module AboutYml
       SafeYAML.load Base64.decode64(about['content'])
     end
 
+    def write_error(err)
+      $stderr.puts('Error while parsing .about.yml for ' \
+        "#{repo.full_name}:\n #{err}")
+      result['errors'] << { repo.full_name => err.message }
+    end
+
     def self.collect_repository_data(repo, client, result)
       collection = (repo.private == true) ? 'private' : 'public'
       repo_name = repo.full_name
       result[collection][repo_name] = fetch_file_contents client, repo_name
     rescue Octokit::NotFound
-      result['missing'] << repo.full_name
+      result['missing'] << repo.full_name unless collection == 'private'
     rescue StandardError => err
-      $stderr.puts('Error while parsing .about.yml for ' \
-        "#{repo.full_name}:\n #{err}")
-      result['errors'] << {repo.full_name => err.message} 
+      write_error err
     end
     private_class_method :collect_repository_data
 
