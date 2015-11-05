@@ -55,7 +55,7 @@ module AboutYml
       result[collection][repo_name] = fetch_file_contents client, repo_name
       add_github_metadata result[collection][repo_name], repo
     rescue Octokit::NotFound
-      result['missing'] << repo.full_name unless collection == 'private'
+      result['missing'] << repo.full_name
     rescue StandardError => err
       write_error err, repo, result
     end
