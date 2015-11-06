@@ -25,7 +25,7 @@ module AboutYml
         'public' => {},
         'private' => {},
         'missing' => [],
-        'errors' => [],
+        'errors' => {},
       }
       repos.each { |repo| collect_repository_data repo, client, result }
       result
@@ -39,7 +39,7 @@ module AboutYml
     def self.write_error(err, repo, result)
       $stderr.puts('Error while parsing .about.yml for ' \
         "#{repo.full_name}:\n #{err}")
-      result['errors'] << { repo.full_name => err.message }
+      result['errors'][repo.full_name] = err.message
     end
 
     def self.add_github_metadata(result, repo)
