@@ -38,7 +38,7 @@ RSpec.describe AboutYml::TemplateGenerator do
         if @type_map[subtype]
           @type_map[subtype].call
         else
-          subprops = @generator.get_ref(props['items']['$ref'])
+          subprops = @generator.definition_properties props['items']['$ref']
           fill_new_object subprops
         end
       end
@@ -46,12 +46,12 @@ RSpec.describe AboutYml::TemplateGenerator do
 
     def fill_object(props)
       if props.key? 'items'
-        return fill_data @generator.get_ref(props['items']['$ref'])
+        return fill_data @generator.definition_properties props['items']['$ref']
       elsif props.key? 'patternProperties'
         # this is hacky, but will work unless the "licenses" patternProperties
         # are changed to include more than one pattern
         _, v = props['patternProperties'].shift
-        subprops = @generator.get_ref(v['$ref'])
+        subprops = @generator.definition_properties v['$ref']
 
         # the patternProperties works by regex matching on the keys of the
         # sub-object, # so we need to create another level of nesting with
