@@ -223,7 +223,7 @@
             "properties": {
                 "url": {
                     "type": "string",
-                    "description": "URI for the link to ",
+                    "description": "URL for the link",
                     "format": "uri"
                 },
                 "text": {
