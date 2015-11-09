@@ -34,7 +34,7 @@ def_command :update_gems, 'Update Ruby gems' do |gems = []|
 end
 
 def_command :test, 'Execute automated tests' do |args = []|
-  exec_cmd "bundle exec rake test #{args.join ' '}"
+  exec_cmd "bundle exec rspec #{args.join ' '}"
 end
 
 def_command :lint, 'Run style-checking tools' do |files = []|

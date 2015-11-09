@@ -18,6 +18,10 @@ module AboutYml
       "---\n# #{schema['description']}\n#\n#{props.join "\n\n"}"
     end
 
+    def definition_properties(item_ref)
+      schema['definitions'][item_ref.split('/').last]['properties']
+    end
+
     private
 
     def generate_item(name, definition)
@@ -60,8 +64,5 @@ module AboutYml
       "\n# Items by property name pattern:#{property_descs}"
     end
 
-    def definition_properties(item_ref)
-      schema['definitions'][item_ref.split('/').last]['properties']
-    end
   end
 end
