@@ -109,6 +109,15 @@
             "format": "uri",
             "uniqueItems": true
         },
+        "api_links": {
+            "type": "array",
+            "description": "Links to project api artifacts",
+            "items": {
+                "$ref": "#/definitions/link"
+            },
+            "format": "uri",
+            "uniqueItems": true
+        },
         "links": {
             "type": "array",
             "description": "Links to project artifacts",
