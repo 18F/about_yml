@@ -109,15 +109,6 @@
             "format": "uri",
             "uniqueItems": true
         },
-        "api_links": {
-            "type": "array",
-            "description": "Links to project api artifacts",
-            "items": {
-                "$ref": "#/definitions/link"
-            },
-            "format": "uri",
-            "uniqueItems": true
-        },
         "links": {
             "type": "array",
             "description": "Links to project artifacts",
@@ -223,6 +214,11 @@
                 "text": {
                     "type": "string",
                     "description": "Anchor text for the link"
+                },
+                "category": {
+                    "type": "string",
+                    "description": "Type of the link",
+                    "enum": ["api", "process", "related"]
                 }
             }
         },
