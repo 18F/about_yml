@@ -220,7 +220,10 @@
                     "description": "Type of the link",
                     "enum": ["api", "process", "related"]
                 }
-            }
+            },
+            "required": [
+              "url"
+            ]
         },
         "contact": {
             "type": "object",
