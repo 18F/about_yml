@@ -214,8 +214,16 @@
                 "text": {
                     "type": "string",
                     "description": "Anchor text for the link"
+                },
+                "category": {
+                    "type": "string",
+                    "description": "Type of the link",
+                    "enum": ["api", "process", "related"]
                 }
-            }
+            },
+            "required": [
+              "url"
+            ]
         },
         "contact": {
             "type": "object",
