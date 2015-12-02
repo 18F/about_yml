@@ -3,8 +3,8 @@ require_relative '../lib/about_yml'
 require 'rspec'
 require 'safe_yaml'
 
-RSpec.describe AboutYml::TemplateGenerator do
-  it 'generates a valid template' do
+RSpec.describe AboutYml::AboutFile do
+  it 'validates the .about.yml file against the schema' do
     filepath = File.expand_path('../../.about.yml', __FILE__)
     about_file = File.join filepath
     about_data = SafeYAML.load_file about_file, safe: true
