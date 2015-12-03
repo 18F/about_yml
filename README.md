@@ -53,6 +53,19 @@ schema. To check your project's `.about.yml` file:
 $ about_yml_validate MY-PROJECT/.about.yml
 ```
 
+Alternatively, you can add the following to your `Rakefile` to tie
+`.about.yml` validation into your build process (this assumes that `Rakefile`
+and `.about.yml` are both in the top-level project directory):
+
+```ruby
+# Development-only tasks
+begin
+  require 'about_yml/tasks/check_about_yml'
+  task test: :run_about_yml_check
+rescue LoadError
+end
+```
+
 ### `about_yml_scrape`
 
 This program checks for an `.about.yml` file in every GitHub repository
