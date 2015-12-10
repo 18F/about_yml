@@ -16,8 +16,10 @@ licenses:
     url: https://github.com/18F/about_yml/blob/master/LICENSE.md
 tasks: https://github.com/18F/about_yml/issues
 contact:
-- mailto:michael.bland@gsa.gov
+- url: mailto:michael.bland@gsa.gov
+  text: Michael Bland
 team:
 - github: mbland
   role: lead
 - github: arowla
+- github: ertzeid

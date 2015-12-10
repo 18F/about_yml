@@ -1,3 +1,4 @@
+require_relative './lib/about_yml/tasks/check_about_yml'
 require 'bundler/gem_tasks'
 require 'rake/testtask'
 
@@ -8,3 +9,4 @@ end
 
 desc 'Run .about.yml tests'
 task default: :test
+task test: :run_about_yml_check
