@@ -99,14 +99,12 @@
                 ".*": {"$ref": "#/definitions/license"}
             }
         },
-        "blog": {
+        "blogTag": {
             "type": "array",
-            "description": "Blogs or websites associated with project development",
+            "description": "Tag to use when blogging about this project",
             "items": {
-                "type": "string",
-                "format": "uri"
+                "type": "string"
             },
-            "format": "uri",
             "uniqueItems": true
         },
         "links": {
