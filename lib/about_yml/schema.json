@@ -99,7 +99,7 @@
                 ".*": {"$ref": "#/definitions/license"}
             }
         },
-        "blog_tag": {
+        "blogTag": {
             "type": "array",
             "description": "Tag to use when blogging about this project",
             "items": {
