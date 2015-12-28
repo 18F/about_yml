@@ -1,6 +1,6 @@
-require_relative './lib/about_yml/tasks/check_about_yml'
 require 'bundler/gem_tasks'
 require 'rake/testtask'
+import './lib/about_yml/tasks/check_about_yml.rake'
 
 Rake::TestTask.new do |t|
   t.libs << 'test'
