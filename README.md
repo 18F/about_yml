@@ -87,6 +87,35 @@ a small, handy program that also uses the
 It will return a YAML list of names and descriptions for all of the
 repositories belonging to an organization.
 
+## `.about.yml` file testing
+
+The `run_about_yml_check` Rake task provides a relatively simple way to check
+a project's `.about.yml` file for errors.
+
+### Add the task to your Rakefile
+
+To test whether the `.about.yml` file for a repository will successfully parse
+based on the schema, simply include the `about_yml` gem in your dependencies and
+then load the task in your Rakefile:
+
+```ruby
+check_yml = Gem::Specification.find_by_name 'about_yml'
+load "#{check_yml.gem_dir}/lib/about_yml/tasks/check_about_yml.rake"
+```
+
+If your project already include `about_yml`, make sure it is using version 0.0.8
+or later.
+
+### Run the task automatically with Travis
+
+To run the `run_about_yml_check` task automatically using Travis, simply add
+the following to your `.travis.yml` config file (with any preferred
+notifications):
+
+```yml
+script: bundle exec rake run_about_yml_check
+```
+
 ## Public domain
 
 This project is in the worldwide [public domain](LICENSE.md). As stated in [CONTRIBUTING](CONTRIBUTING.md):
