@@ -116,6 +116,136 @@ notifications):
 script: bundle exec rake run_about_yml_check
 ```
 
+
+## `.about.yml` cheat sheet
+The following attributes are currently stored in the `.about.yml` file and are used in one or more of the locations referenced above. Required attributes are marked with an asterix, and field descriptions and examples are offered. Take a look at [Every Kid in a Park](https://github.com/18F/ekip-api/blob/master/.about.yml) or [Open Opportunities](https://github.com/18F/openopps-platform/blob/dev/.about.yml) for living examples of `.about.yml` in action.
+
+
+`name`* - This is a short name of your project that is used as a URL slug on the 18F dashboard.
+> 
+```yml
+name: ekip-api
+```
+
+`full_name`* - This is the display name of your project on the 18F dashboard.
+> 
+```yml
+full_name: Every Kid in a Park
+```
+
+`description`* - What is the problem your project solves? What is the solution? (required)
+> 
+```yml
+description: In 2015, President Obama formally announced the Every Kid in a Park program, which
+provides fourth graders and their families with free access to more than 2,000 federally managed
+sites. 18F worked with the Department of the Interior to create the program’s website, which was
+written at a fourth grade level with the help of fourth graders.
+```
+
+`impact`* - What is the measurable impact of your project?
+> 
+```yml
+impact: We designed a website that gives fourth graders and their families free access to more 
+than 2,000 federally-managed sites.
+```
+
+`owner_type`* - What kind of team owns the repository? *Accepted values: guild, working-group, project*
+> 
+```yml
+owner_type: project
+```
+
+`stage`* - What is your project's current status? *Accepted values: discovery, alpha, beta, live*
+>
+```yml
+stage: live
+```
+
+`testable`* - Should this repo have automated tests? If so, set to `true`. *Accepted values: true, false*
+>
+```yml
+testable: true
+```
+
+`licenses`* - What are the licences that apply to the project and/or its components? Get the license name from the [Software Package Data Exchange (SPDX)] (https://spdx.org/licenses/)
+>
+```yml
+licenses:
+  ekip-api:
+    name: CC0-1.0
+    url: https://github.com/18F/team_api/blob/master/LICENSE.md
+```
+
+`partners` - Who is the parter for your project? (Use the partner `full_name` [here](https://github.com/18F/dashboard/blob/staging/_data/partners.yml))
+```yml
+partners:
+- U.S. Department of the Interior
+```
+
+`contact` - The main point of contact(s) for your project, and a `mailto:` link for that contact.
+>
+```yml
+contact:
+- url: mailto:shashank.khandelwal@gsa.gov
+  text: Shashank Khandelwal
+```
+
+`team` - Who are the team members on your project? For each team member, list a github name, role and an internal identifier. (The project lead role should be `lead`)
+>
+```yml
+team:
+- github: khandelwal
+  role: lead
+  id: khandelwal
+```
+
+`type` - What kind of content is contained in the project repository? *Accepted values: app, docs, policy*
+> 
+```yml
+type: app
+```
+
+`parent` - Name of the main project repo if this is a sub-repo; name of the working group/guild repo if this is a working group/guild subproject
+> 
+```yml
+parent: [GitHub repo name]
+```
+
+`links` - What are the key links associated with your project?
+> 
+```yml
+links:
+- url: everykidinapark.gov
+  text: Every Kid in a Park
+```
+
+`blog` - What is the 18F blog tag for your project? You can find a list of tags [here](https://18f.gsa.gov/tags/)
+> 
+```yml
+blog: [18F Blog Tag]
+```
+
+`stack` - What technologies are used in this project?
+>
+```yml
+stack:
+- Django
+```
+
+`services` - What are the services used to supply project status information?
+>
+```yml
+services:
+- name: Coveralls
+  category: Build review
+  url: https://coveralls.io/github/18F/ekip-api?branch=master
+  badge: https://coveralls.io/repos/18F/ekip-api/badge.svg?branch=master&service=github
+- name: Quantified Code
+  category: Site review
+  url: https://www.quantifiedcode.com/app/project/ecb305ac0bfa4e968192621402faface
+  badge: https://www.quantifiedcode.com/api/v1/project/ecb305ac0bfa4e968192621402faface/badge.svg
+```
+
 ## Public domain
 
 This project is in the worldwide [public domain](LICENSE.md). As stated in [CONTRIBUTING](CONTRIBUTING.md):
