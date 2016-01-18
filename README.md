@@ -133,7 +133,7 @@ name: ekip-api
 full_name: Every Kid in a Park
 ```
 
-`description`* - What is the problem your project solves? What is the solution? (required)
+`description`* - What is the problem your project solves? What is the solution? The #dashboard team will gladly help you put this together for your project.
 > 
 ```yml
 description: In 2015, President Obama formally announced the Every Kid in a Park program, which
@@ -142,7 +142,7 @@ sites. 18F worked with the Department of the Interior to create the program’s 
 written at a fourth grade level with the help of fourth graders.
 ```
 
-`impact`* - What is the measurable impact of your project?
+`impact`* - What is the measurable impact of your project?  The #dashboard team will gladly help you put this together for your project.
 > 
 ```yml
 impact: We designed a website that gives fourth graders and their families free access to more 
