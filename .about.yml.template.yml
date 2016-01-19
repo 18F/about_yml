@@ -87,7 +87,8 @@ blogTag:
 
 # What technologies are used in this project?
 # stack:
-#   - Django
+# - Django
+stack:
 
 # What are the services used to supply project status information?
 # services:
@@ -100,4 +101,8 @@ blogTag:
 #   url: https://www.quantifiedcode.com/app/project/ecb305ac0bfa4e968192621402faface
 #   badge: https://www.quantifiedcode.com/api/v1/project/ecb305ac0bfa4e968192621402faface/badge.svg
 services:
+- name:
+  category:
+  url:
+  badge:
 
