@@ -225,7 +225,7 @@ links:
 `blogTag` - What is the 18F blog tag for your project? You can find a list of tags [here](https://18f.gsa.gov/tags/)
 > 
 ```yml
-blog: [18F Blog Tag]
+blogTag: [18F Blog Tag]
 ```
 
 `stack` - What technologies are used in this project?
