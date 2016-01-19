@@ -133,7 +133,7 @@ name: ekip-api
 full_name: Every Kid in a Park
 ```
 
-`description`* - What is the problem your project solves? What is the solution? Use the format shown below, and add line breaks where they make sense. The #dashboard team will gladly help you put this together for your project. 
+`description`* - What is the problem your project solves? What is the solution? Use the format shown below. The #dashboard team will gladly help you put this together for your project. 
 > 
 ```yml
 description: |
@@ -143,7 +143,7 @@ description: |
   written at a fourth grade level with the help of fourth graders.
 ```
 
-`impact`* - What is the measurable impact of your project? Use the format shown below, and add line breaks where they make sense. The #dashboard team will gladly help you put this together for your project.
+`impact`* - What is the measurable impact of your project? Use the format shown below. The #dashboard team will gladly help you put this together for your project.
 > 
 ```yml
 impact: |
