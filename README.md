@@ -118,7 +118,7 @@ script: bundle exec rake run_about_yml_check
 
 
 ## `.about.yml` cheat sheet
-The following attributes are currently stored in the `.about.yml` file and are used in one or more of the locations referenced above. Required attributes are marked with an asterix, and field descriptions and examples are offered. Take a look at [Every Kid in a Park](https://github.com/18F/ekip-api/blob/master/.about.yml) or [Open Opportunities](https://github.com/18F/openopps-platform/blob/dev/.about.yml) for living examples of `.about.yml` in action.
+The following attributes are currently stored in the `.about.yml` file and are used in one or more of the locations referenced above. Required attributes are marked with an asterisk, and field descriptions and examples are offered. Take a look at [Every Kid in a Park](https://github.com/18F/ekip-api/blob/master/.about.yml) or [Open Opportunities](https://github.com/18F/openopps-platform/blob/dev/.about.yml) for living examples of `.about.yml` in action.
 
 
 `name`* - This is a short name of your project that is used as a URL slug on the 18F dashboard.
@@ -136,17 +136,19 @@ full_name: Every Kid in a Park
 `description`* - What is the problem your project solves? What is the solution? The #dashboard team will gladly help you put this together for your project.
 > 
 ```yml
-description: In 2015, President Obama formally announced the Every Kid in a Park program, which
-provides fourth graders and their families with free access to more than 2,000 federally managed
-sites. 18F worked with the Department of the Interior to create the program’s website, which was
-written at a fourth grade level with the help of fourth graders.
+description: |
+  In 2015, President Obama formally announced the Every Kid in a Park program, which provides 
+  fourth graders and their families with free access to more than 2,000 federally managed sites. 
+  18F worked with the Department of the Interior to create the program’s website, which was 
+  written at a fourth grade level with the help of fourth graders.
 ```
 
 `impact`* - What is the measurable impact of your project?  The #dashboard team will gladly help you put this together for your project.
 > 
 ```yml
-impact: We designed a website that gives fourth graders and their families free access to more 
-than 2,000 federally-managed sites.
+impact: |
+  We designed a website that gives fourth graders and their families free access to more than 2,000 
+  federally-managed sites.
 ```
 
 `owner_type`* - What kind of team owns the repository? *Accepted values: guild, working-group, project*
@@ -219,7 +221,7 @@ links:
   text: Every Kid in a Park
 ```
 
-`blog` - What is the 18F blog tag for your project? You can find a list of tags [here](https://18f.gsa.gov/tags/)
+`blogTag` - What is the 18F blog tag for your project? You can find a list of tags [here](https://18f.gsa.gov/tags/)
 > 
 ```yml
 blog: [18F Blog Tag]
