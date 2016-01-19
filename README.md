@@ -118,7 +118,7 @@ script: bundle exec rake run_about_yml_check
 
 
 ## `.about.yml` cheat sheet
-The following attributes are currently stored in the `.about.yml` file and are used in one or more of the locations referenced above. Required attributes are marked with an asterisk, and field descriptions and examples are offered. Take a look at [Every Kid in a Park](https://github.com/18F/ekip-api/blob/master/.about.yml) or [Open Opportunities](https://github.com/18F/openopps-platform/blob/dev/.about.yml) for living examples of `.about.yml` in action.
+The following attributes are currently stored in the `.about.yml` file and are used in one or more of the locations referenced above. Required attributes are marked with an asterisk, and field descriptions and examples follow each attribute. Take a look at [Every Kid in a Park](https://github.com/18F/ekip-api/blob/master/.about.yml) or [Open Opportunities](https://github.com/18F/openopps-platform/blob/dev/.about.yml) for living examples of `.about.yml` in action.
 
 
 `name`* - This is a short name of your project that is used as a URL slug on the 18F dashboard.
@@ -133,7 +133,7 @@ name: ekip-api
 full_name: Every Kid in a Park
 ```
 
-`description`* - What is the problem your project solves? What is the solution? The #dashboard team will gladly help you put this together for your project.
+`description`* - What is the problem your project solves? What is the solution? Use the format shown below, and add line breaks where they make sense. The #dashboard team will gladly help you put this together for your project. 
 > 
 ```yml
 description: |
@@ -143,7 +143,7 @@ description: |
   written at a fourth grade level with the help of fourth graders.
 ```
 
-`impact`* - What is the measurable impact of your project?  The #dashboard team will gladly help you put this together for your project.
+`impact`* - What is the measurable impact of your project? Use the format shown below, and add line breaks where they make sense. The #dashboard team will gladly help you put this together for your project.
 > 
 ```yml
 impact: |
@@ -178,7 +178,7 @@ licenses:
     url: https://github.com/18F/team_api/blob/master/LICENSE.md
 ```
 
-`partners` - Who is the parter for your project? (Use the partner `full_name` [here](https://github.com/18F/dashboard/blob/staging/_data/partners.yml))
+`partners` - Who is the parter for your project? (Use the full name of the partner documented  [here](https://github.com/18F/dashboard/blob/staging/_data/partners.yml))
 ```yml
 partners:
 - U.S. Department of the Interior
