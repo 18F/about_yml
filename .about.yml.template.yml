@@ -56,6 +56,8 @@ partners:
 #   url: mailto:shashank.khandelwal@gsa.gov
 #   text: Shashank Khandelwal
 contact:
+  url:
+  text:
 
 # Who are the team members on your project? 
 # For each team member, list a github name, role and an internal identifier. (The project lead role should be `lead`)
@@ -64,6 +66,9 @@ contact:
 #   role: lead
 #   id: khandelwal
 team:
+  - github:
+    role:
+    id:
 
 # What kind of content is contained in the project repository? Accepted values: app, docs, policy
 # type: app
@@ -79,6 +84,8 @@ parent:
 # - url: everykidinapark.gov
 #   text: Every Kid in a Park
 links:
+  url:
+  text:
 
 # What is the 18F blog tag for your project? 
 # You can find a list of tags here: https://18f.gsa.gov/tags/
