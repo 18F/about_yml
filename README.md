@@ -179,6 +179,7 @@ licenses:
 ```
 
 `partners` - Who is the parter for your project? (Use the full name of the partner documented  [here](https://github.com/18F/dashboard/blob/staging/_data/partners.yml))
+>
 ```yml
 partners:
 - U.S. Department of the Interior
