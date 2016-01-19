@@ -1,0 +1,103 @@
+---
+# This is a short name of your project that is used as a URL slug on the 18F dashboard. (required)
+# name: ekip-api
+name:
+
+# This is the display name of your project on the 18F dashboard. (required)
+# full_name: Every Kid in a Park
+full_name:
+
+# What is the problem your project solves? What is the solution? Use the format shown below. 
+# The #dashboard team will gladly help you put this together for your project. (required)
+# description: |
+#   In 2015, President Obama formally announced the Every Kid in a Park program, which provides 
+#   fourth graders and their families with free access to more than 2,000 federally managed sites. 
+#   18F worked with the Department of the Interior to create the program’s website, which was 
+#   written at a fourth grade level with the help of fourth graders.
+description:
+
+# What is the measurable impact of your project? (required)
+# impact: |
+#   We designed a website that gives fourth graders and their families free access to more than 2,000 
+#   federally-managed sites.
+impact:
+
+# What kind of team owns the repository? Accepted values: guild, working-group, project (required)
+# owner_type: project
+owner_type:
+
+# What is your project's current stage? Accepted values: discovery, alpha, beta, live (required)
+# stage: live
+stage:
+
+# Should this repo have automated tests? If so, set to true. Accepted values: true, false
+# testable: true
+testable:
+
+# What are the licences that apply to the project and/or its components? 
+# Get the license name from the Software Package Data Exchange https://spdx.org/licenses/
+# licenses:
+#   ekip-api:
+#     name: CC0-1.0
+#     url: https://github.com/18F/team_api/blob/master/LICENSE.md
+licenses:
+  placeholder_label:
+    name:
+    url:
+
+# List the parter(s) for your project? 
+# (Use the full name of the partner(s) documented here: https://github.com/18F/dashboard/blob/staging/_data/partners.yml
+# partners:
+#   - U.S. Department of the Interior
+partners:
+
+# The main point of contact(s) for your project, and a mailto: link for that contact.
+# contact:
+#   url: mailto:shashank.khandelwal@gsa.gov
+#   text: Shashank Khandelwal
+contact:
+
+# Who are the team members on your project? 
+# For each team member, list a github name, role and an internal identifier. (The project lead role should be `lead`)
+# team:
+# - github: khandelwal
+#   role: lead
+#   id: khandelwal
+team:
+
+# What kind of content is contained in the project repository? Accepted values: app, docs, policy
+# type: app
+type:
+
+# Name of the main project repo if this is a sub-repo;
+# name of the working group/guild repo if this is a working group/guild subproject
+# parent: [GitHub repo name]
+parent:
+
+# What are the key links associated with your project?
+# links:
+# - url: everykidinapark.gov
+#   text: Every Kid in a Park
+links:
+
+# What is the 18F blog tag for your project? 
+# You can find a list of tags here: https://18f.gsa.gov/tags/
+# blogTag: [18F Blog Tag]
+blogTag:
+
+# What technologies are used in this project?
+# stack:
+#   - Django
+
+# What are the services used to supply project status information?
+# services:
+# - name: Coveralls
+#   category: Build review
+#   url: https://coveralls.io/github/18F/ekip-api?branch=master
+#   badge: https://coveralls.io/repos/18F/ekip-api/badge.svg?branch=master&service=github
+# - name: Quantified Code
+#   category: Site review
+#   url: https://www.quantifiedcode.com/app/project/ecb305ac0bfa4e968192621402faface
+#   badge: https://www.quantifiedcode.com/api/v1/project/ecb305ac0bfa4e968192621402faface/badge.svg
+services:
+
