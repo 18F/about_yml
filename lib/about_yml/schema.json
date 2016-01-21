@@ -6,58 +6,108 @@
     "properties": {
         "name": {
             "type": "string",
-            "description": "Short name that acts as the project identifier"
+            "description": "This is a short name of your project that is used as a URL slug on the 18F dashboard."
         },
         "full_name": {
             "type": "string",
-            "description": "Full proper name of the project"
-        },
-        "type": {
-            "type": "string",
-            "description": "The type of content in the repo",
-            "enum": ["app", "docs", "policy"]
-        },
-        "owner_type": {
-            "type": "string",
-            "description": "Describes whether a project team, working group/guild, etc. owns the repo",
-            "enum": ["guild", "working-group", "project"]
-        },
-        "parent": {
-            "type": "string",
-            "description": "Name of the main project repo if this is a sub-repo; name of the working group/guild repo if this is a working group/guild subproject"
-        },
-        "stage": {
-            "type": "string",
-            "enum": ["discovery", "alpha", "beta", "live", "sunset", "transfer", "end"],
-            "description": "Maturity stage of the project"
+            "description": "This is the display name of your project on the 18F dashboard."
         },
         "description": {
             "type": "string",
-            "description": "Description of the project"
+            "description": "What is the problem your project solves? What is the solution? Use the format shown below. The #dashboard team will gladly help you put this together for your project."
         },
-        "tags": {
+        "impact": {
+            "type": "string",
+            "description": "What is the measurable impact of your project? Use the format shown below. The #dashboard team will gladly help you put this together for your project."
+        },
+        "milestones": {
             "type": "array",
-            "description": "Tags that describe the project or aspects of the project",
+            "description": "What are the key milestones you've achieved recently?",
             "items": {"type": "string"},
             "uniqueItems": true
+        },
+        "owner_type": {
+            "type": "string",
+            "description": "What kind of team owns the repository?",
+            "enum": ["guild", "working-group", "project"]
+        },
+        "stage": {
+            "type": "string",
+            "description": "MWhat is your project's current status?",
+            "enum": ["discovery", "alpha", "beta", "live"]
         },
         "testable": {
             "type": "boolean",
             "default": false,
             "description": "Should this repo have automated tests? If so, set to `true`."
         },
+        "licenses": {
+            "type": "object",
+            "description": "What are the licences that apply to the project and/or its components?",
+            "patternProperties": {
+                ".*": {"$ref": "#/definitions/license"}
+            }
+        },
+        "partners": {
+            "type": "array",
+            "description": "Who is the parter for your project? (Use the full name of the partner documented here: https://github.com/18F/dashboard/blob/staging/_data/partners.yml)",
+            "items": {"type": "string"},
+            "uniqueItems": true
+        },
+        "contact": {
+            "type": "array",
+            "description": "The main point of contact(s) for your project, and a `mailto:` link for each contact.",
+            "items": {
+                "$ref": "#/definitions/contact"
+            },
+            "uniqueItems": true
+        },
         "team": {
             "type": "array",
-            "description": "Team members contributing to the project",
+            "description": "Who are the team members on your project?",
             "items": {
                 "$ref": "#/definitions/person"
             },
             "uniqueItems": true
         },
-        "partners": {
+        "type": {
+            "type": "string",
+            "description": "What kind of content is contained in the project repository?",
+            "enum": ["app", "docs", "policy"]
+        },
+        "parent": {
+            "type": "string",
+            "description": "Name of the main project repo if this is a sub-repo; name of the working group/guild repo if this is a working group/guild subproject"
+        },
+        "links": {
             "type": "array",
-            "description": "Partners for whom the project is developed",
+            "description": "What are the key links associated with your project?",
+            "items": {
+                "$ref": "#/definitions/link"
+            },
+            "format": "uri",
+            "uniqueItems": true
+        },
+        "blogTag": {
+            "type": "array",
+            "description": "What is the 18F blog tag for your project? You can find a list of tags here: https://18f.gsa.gov/tags/",
+            "items": {
+                "type": "string"
+            },
+            "uniqueItems": true
+        },
+        "stack": {
+            "type": "array",
+            "description": "What technologies are used in this project?",
             "items": {"type": "string"},
+            "uniqueItems": true
+        },
+        "services": {
+            "type": "array",
+            "description": "What are the services used to supply project status information?",
+            "items": {
+                "$ref": "#/definitions/service"
+            },
             "uniqueItems": true
         },
         "users": {
@@ -68,65 +118,15 @@
             },
             "uniqueItems": true
         },
-        "milestones": {
+        "tags": {
             "type": "array",
-            "description": "Brief descriptions of significant project developments",
+            "description": "Tags that describe the project or aspects of the project",
             "items": {"type": "string"},
-            "uniqueItems": true
-        },
-        "stack": {
-            "type": "array",
-            "description": "Technologies used to build the project",
-            "items": {"type": "string"},
-            "uniqueItems": true
-        },
-        "impact": {
-            "type": "string",
-            "description": "Brief description of the project's outcomes"
-        },
-        "services": {
-            "type": "array",
-            "description": "Services used to supply project status information",
-            "items": {
-                "$ref": "#/definitions/service"
-            },
-            "uniqueItems": true
-        },
-        "licenses": {
-            "type": "object",
-            "description": "Licenses that apply to the project and/or its components",
-            "patternProperties": {
-                ".*": {"$ref": "#/definitions/license"}
-            }
-        },
-        "blogTag": {
-            "type": "array",
-            "description": "Tag to use when blogging about this project",
-            "items": {
-                "type": "string"
-            },
-            "uniqueItems": true
-        },
-        "links": {
-            "type": "array",
-            "description": "Links to project artifacts",
-            "items": {
-                "$ref": "#/definitions/link"
-            },
-            "format": "uri",
-            "uniqueItems": true
-        },
-        "contact": {
-            "type": "array",
-            "description": "URIs for points-of-contact",
-            "items": {
-                "$ref": "#/definitions/contact"
-            },
             "uniqueItems": true
         }
     },
     "required": [
-        "name", "full_name", "stage", "team", "licenses", "owner_type", "testable"
+        "name", "full_name", "description", "impact", "stage", "team", "licenses", "owner_type", "testable"
     ],
     "definitions": {
         "person": {
