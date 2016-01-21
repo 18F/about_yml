@@ -6,8 +6,8 @@ require 'about_yml/version'
 Gem::Specification.new do |s|
   s.name          = 'about_yml'
   s.version       = AboutYml::VERSION
-  s.authors       = ['Mike Bland', 'Alison Rowland']
-  s.email         = ['michael.bland@gsa.gov', 'alisonrowland@gmail.com']
+  s.authors       = ['Mike Bland']
+  s.email         = ['michael.bland@gsa.gov']
   s.summary       = '.about.yml project metadata schema and tools'
   s.description   = (
     'The .about.yml mechanism allows an project to publish and maintain ' \
