@@ -20,12 +20,6 @@
             "type": "string",
             "description": "What is the measurable impact of your project? Use the format shown below. The #dashboard team will gladly help you put this together for your project."
         },
-        "milestones": {
-            "type": "array",
-            "description": "What are the key milestones you've achieved recently?",
-            "items": {"type": "string"},
-            "uniqueItems": true
-        },
         "owner_type": {
             "type": "string",
             "description": "What kind of team owns the repository?",
@@ -74,6 +68,12 @@
             "type": "string",
             "description": "What kind of content is contained in the project repository?",
             "enum": ["app", "docs", "policy"]
+        },
+        "milestones": {
+            "type": "array",
+            "description": "What are the key milestones you've achieved recently?",
+            "items": {"type": "string"},
+            "uniqueItems": true
         },
         "parent": {
             "type": "string",
