@@ -8,6 +8,8 @@ stage: discovery
 testable: true
 description: >
   A gem for the .about.yml project metadata schema and tools
+impact: >
+  Making it easy for project leads to communicate details of their project to all members of 18F and the public.
 stack:
 - Ruby
 licenses:
