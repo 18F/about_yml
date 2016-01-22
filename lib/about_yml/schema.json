@@ -6,11 +6,11 @@
     "properties": {
         "name": {
             "type": "string",
-            "description": "This is a short name of your project that is used as a URL slug on the 18F dashboard."
+            "description": "This is a short name of your project that can be used as a URL slug."
         },
         "full_name": {
             "type": "string",
-            "description": "This is the display name of your project on the 18F dashboard."
+            "description": "This is the display name of your project."
         },
         "description": {
             "type": "string",
@@ -43,20 +43,20 @@
         },
         "licenses": {
             "type": "object",
-            "description": "What are the licences that apply to the project and/or its components?",
+            "description": "What are the licenses that apply to the project and/or its components?",
             "patternProperties": {
                 ".*": {"$ref": "#/definitions/license"}
             }
         },
         "partners": {
             "type": "array",
-            "description": "Who is the parter for your project? (Use the full name of the partner documented here: https://github.com/18F/dashboard/blob/staging/_data/partners.yml)",
+            "description": "Who is the partner for your project? (Use the full name of the partner documented here: https://github.com/18F/dashboard/blob/staging/_data/partners.yml)",
             "items": {"type": "string"},
             "uniqueItems": true
         },
         "contact": {
             "type": "array",
-            "description": "The main point of contact(s) for your project, and a `mailto:` link for each contact.",
+            "description": "The main point of contact(s) and/or the issue reporting system for your project, and either a `mailto:` link or URL for each contact.",
             "items": {
                 "$ref": "#/definitions/contact"
             },
@@ -64,7 +64,7 @@
         },
         "team": {
             "type": "array",
-            "description": "Who are the team members on your project?",
+            "description": "Who are the team members on your project? You can specify GitHub usernames, email addresses, or other organizational usernames.",
             "items": {
                 "$ref": "#/definitions/person"
             },
@@ -77,11 +77,11 @@
         },
         "parent": {
             "type": "string",
-            "description": "Name of the main project repo if this is a sub-repo; name of the working group/guild repo if this is a working group/guild subproject"
+            "description": "Name of the main project repo if this is a sub-repo; name of the grouplet repo if this is a working group/guild subproject"
         },
         "links": {
             "type": "array",
-            "description": "What are the key links associated with your project?",
+            "description": "What are the links to key artifacts associated with your project? e.g. the production site, documentation.",
             "items": {
                 "$ref": "#/definitions/link"
             },
@@ -90,7 +90,7 @@
         },
         "blogTag": {
             "type": "array",
-            "description": "What is the 18F blog tag for your project? You can find a list of tags here: https://18f.gsa.gov/tags/",
+            "description": "What tags does your organization's blog associate with your project? You can find a list of 18F blog tags here: https://18f.gsa.gov/tags/",
             "items": {
                 "type": "string"
             },
