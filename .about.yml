@@ -8,6 +8,8 @@ stage: discovery
 testable: true
 description: >
   A gem for the .about.yml project metadata schema and tools
+impact: >
+  Making it easy for project leads to communicate details of their project to any audience by simply updating a file in the project repo.
 stack:
 - Ruby
 licenses:
