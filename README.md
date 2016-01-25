@@ -209,11 +209,6 @@ milestones:
 - "December 2015: Discovery completed"
 ```
 
-- github: khandelwal
-  role: lead
-  id: khandelwal
-```
-
 `type` - What kind of content is contained in the project repository? *Accepted values: app, docs, policy*
 > 
 ```yml
