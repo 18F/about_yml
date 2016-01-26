@@ -22,6 +22,13 @@ web site, cultivation of `.about.yml` files will help make our activity more
 easily transparent to our teammates, and to anyone outside our team who wishes
 to discover what we're working on (and how we work).
 
+## Quick start
+
+Copy the [`template.yml`](./template.yml) file from this repository into the
+root directory of your project's repository as `.about.yml`. Then refer to the
+[cheat sheet](#cheat-sheet) for instructions regarding how to fill in the
+data.
+
 ## Installation
 
 Run `gem install about_yml` on the command line. You can also add `gem
@@ -117,7 +124,7 @@ script: bundle exec rake run_about_yml_check
 ```
 
 
-## `.about.yml` cheat sheet
+## <a name="cheat-sheet"></a>`.about.yml` cheat sheet
 The following attributes are currently stored in the `.about.yml` file and are used in one or more of the locations referenced above. Required attributes are marked with an asterisk, and field descriptions and examples follow each attribute. Take a look at [Every Kid in a Park](https://github.com/18F/ekip-api/blob/master/.about.yml) or [Open Opportunities](https://github.com/18F/openopps-platform/blob/dev/.about.yml) for living examples of `.about.yml` in action.
 
 
