@@ -27,7 +27,7 @@
         },
         "stage": {
             "type": "string",
-            "description": "MWhat is your project's current status?",
+            "description": "What is your project's current status?",
             "enum": ["discovery", "alpha", "beta", "live"]
         },
         "testable": {
