@@ -25,7 +25,7 @@ impact:
 # values: guild, working-group, project
 owner_type:
 
-# MWhat is your project's current status? (required)
+# What is your project's current status? (required)
 # values: discovery, alpha, beta, live
 stage:
 
