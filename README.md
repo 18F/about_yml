@@ -209,6 +209,13 @@ team:
   id: khandelwal
 ```
 
+`milestones` - What are the key milestones you've achieved recently?
+>
+```yml
+milestones:
+- "December 2015: Discovery completed"
+```
+
 `type` - What kind of content is contained in the project repository? *Accepted values: app, docs, policy*
 > 
 ```yml
