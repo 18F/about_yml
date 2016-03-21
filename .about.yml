@@ -4,7 +4,7 @@ full_name: .about.yml gem
 type: app
 owner_type: project
 status: active
-stage: discovery
+stage: alpha
 testable: true
 description: >
   A gem for the .about.yml project metadata schema and tools
@@ -21,7 +21,9 @@ contact:
 - url: mailto:michael.bland@gsa.gov
   text: Michael Bland
 team:
-- github: mbland
+- github: mtorres253
   role: lead
+- github: mbland
+  role: author
 - github: arowla
 - github: ertzeid
